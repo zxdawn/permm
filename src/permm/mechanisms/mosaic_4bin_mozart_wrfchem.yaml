@@ -1,0 +1,533 @@
+---
+comment: "Mozart chemical mechanism as implemented in Mosaic"
+species_list:
+    O3: 3O
+    O: 1O
+    O1D_CB4: 1O
+    N2O: 2N + 1O
+    'NO': 1N + 1O
+    NO2: 1N + 2O
+    NO3: 1N + 3O
+    NH3: 1N + 3H
+    HNO3: 1N + 3O + 1H
+    HO2NO2: 1H + 4O + 1N
+    N2O5: 2N + 5O
+    H2: 2H
+    OH: 1O + 1H
+    HO2: 1H + 2O
+    H2O2: 2H + 2O
+    CH4: 1C + 4H
+    CO: 1C + 1O
+    HCOOH: 2H + 1C + 2O
+    HOCH2OO: 3H + 3O +1C
+    CH3O2: 1C + 3H + 2O
+    CH3OOH: 1C + 4H + 2O
+    CH2O: 1C + 2H + 1O
+    CH3OH: 1C + 4H + 1O
+    C2H2: 2C + 2H
+    C2H4: 2C + 4H
+    EO: 5H + 2C + 2O 
+    EO2: 5H + 2C + 3O 
+    CH3CHO: 2C + 4H + 1O
+    CH3COOH: 2C + 4H + 2O
+    CH3COCH3: 3C + 6H + 1O
+    CH3COCHO: 3C + 4H + 2O 
+    CH3CO3: 2C + 3H + 3O
+    CH3COOOH: 2C + 4H + 3O
+    GLYOXAL: 2C + 2H + 2O
+    PO2: 3C + 7H + 3O
+    POOH: 3C + 8H + 3O
+    PAN: 1N + 2C + 3O + 3H
+    MPAN: 4C + 5H + 5O + 1N
+    MCO3: 4C + 5H + 3O
+    MACR: 4C + 6H + 1O
+    MACRO2: 4C + 7H + 4O
+    MACROOH: 4C + 7H + 4O
+    MVK: 4C + 6H + 1O
+    C2H6: 2C + 6H
+    C3H6: 3C + 6H
+    C3H8: 3C + 8H
+    C2H5OH: 2C + 6H + 1O
+    C2H5OOH: 2C + 6H + 2O
+    C3H7O2: 3C + 7H + 2O
+    C3H7OOH: 3C + 8H + 2O
+    APIN: 10C + 16H
+    BPIN: 10C + 16H
+    LIMON: 10C + 16H
+    MYRC: 10C + 16H
+    BCARY: 15C + 24H
+    TERPROD1: 10C + 16H + 2O
+    TERPROD2: 9C + 14H + 2O
+    TERP2O2: 10C + 15H + 4
+    TERP2OOH: 10C + 18H + 
+    NTERPO2: 10C + 16H + 1N + 5O
+    RO2: 3C + 5H + 3O 
+    ROOH: 3C + 6H + 3O
+    ONIT: 3C + 5H + 4O + 1N
+    MBO: 5C + 10H + 1O
+    MBOO2: 5C + 11H + 4O
+    HMPROP: 4C + 8H + 2O
+    HMPROPO2: 4C + 7H + 4O
+    MBOOOH: 5C + 12H + 4O
+    MBONO3O2: 5C + 10H + 1N + 6O
+    ONITR: 4C + 7H + 1N + 4O
+    ISOP: 5C + 8H
+    ISOPO2: 9H + 3O + 5C
+    ISOPOOH: 10H + 3O + 5C 
+    ISOPNO3: 5C + 8H + 5O + 1N
+    HYAC: 3C + 6H + 2O
+    GLYALD: 4H + 2O + 2C
+    HYDRALD: 8H + 2O + 5C 
+    ENEO2: 4C + 9H + 3O
+    MEK: 4C + 8H + 1O
+    MEKO2: 4C + 7H + 3O
+    C2H5O2: 2C + 5H + 2O
+    BIGENE: 4C + 8H
+    BIGALD: 5C + 6H + 2O
+    BIGALK: 5C + 12H
+    ALKO2: 5C + 11H + 2O
+    ALKOOH: 5C + 12H + 2O
+    MEKOOH: 4C + 8H + 3O
+    TOLUENE: 7C + 8H
+    TOLO2: 7C + 9H + 5O
+    TOLOOH: 7C + 10H + 5O
+    TERPO2: 10C + 17H + 3O
+    TERPOOH: 10C + 18H + 3O
+    CRESOL: 7C + 8H + 1O
+    DMS: 2C + 6H + 1S
+    SO2: 1S + 2O
+    SO4: 1S + 4O
+    XO2: 9H + 5O + 5C 
+    XOOH: 10H + 5O + 5C
+    BENZENE: 6C + 6H
+    PHENOL: 6C + 5H + 1O
+    BEPOMUC: 6C + 6H + 3O
+    BENZO2: 6C + 7H + 5O
+    PHENO2: 6C + 7H + 6O
+    PHENO: 6C + 5H + 1O 
+    PHENOOH: 6C + 8H + 6O
+    C6H5O2: 6C + 5H + 2O
+    C6H5OOH: 6C + 6H + 2O
+    BENZOOH: 6C + 8H + 5O
+    BIGALD1: 4C + 4H + 2O
+    BIGALD2: 5C + 6H + 2O
+    BIGALD3: 5C + 6H + 2O
+    BIGALD4: 6C + 8H + 2O
+    MALO2: 4C + 3H + 4O
+    PBZNIT: 7C + 5H + 5O + 1N
+    TEPOMUC: 7C + 8H + 3O
+    BZOO: 7C + 7H + 2O
+    BZOOH: 7C + 8H + 2O
+    BZALD: 7C + 6H + 1O
+    ACBZO2: 7C + 5H + 3O
+    DICARBO2: 5C + 5H + 4O
+    MDIALO2: 4C + 5H + 4O
+    XYLENES: 8C + 10H
+    XYLOL: 8C + 10H + 1O
+    XYLOLO2: 8C + 11H + 6O
+    XYLOLOOH: 8C + 12H + 6O
+    XYLENO2: 8C + 11H + 5O
+    XYLENOOH: 8C + 12H + 5O
+    HONO: 1H + 2O + 1N
+    H2O: 2H + O
+
+
+reaction_list:
+    'M_HV_IRR': M ->[j] O + O                                             
+    'O3_HV_IRR'      : O3 ->[j] O1D_CB4                                    
+    'O3_HV_a_IRR'      : O3 ->[j] O                                          
+    'N2O_HV_IRR'     : N2O ->[j] O1D_CB4                                  
+    'NO2_HV_IRR'     : NO2 ->[j] O + NO                                            
+    'N2O5_HV_IRR'    : N2O5 ->[j] NO2 + NO3                                         
+    'HNO3_HV_IRR'    : HNO3 ->[j] OH + NO2                                          
+    'NO3_HV_IRR'     : NO3 ->[j] .89*NO2 + .11*NO + .89*O3                         
+    'HO2NO2_HV_IRR'  : HO2NO2 ->[j] 0.66*HO2 + 0.66*NO2 + 0.33*OH + 0.33*NO3          
+    'CH3OOH_HV_IRR'  : CH3OOH ->[j] CH2O + HO2 + OH                                   
+    'CH2O_HV_IRR'    : CH2O ->[j] HO2 + HO2 + CO                                    
+    'CH2O_HV_a_IRR'    : CH2O ->[j] CO + H2                                           
+    'H2O2_HV_IRR'    : H2O2 ->[j] OH + OH                                           
+    'CH3CHO_HV_IRR'  : CH3CHO ->[j] CH3O2 + CO + HO2                                  
+    'POOH_HV_IRR'    : POOH ->[j] CH3CHO + CH2O + HO2 + OH                          
+    'CH3COOOH_HV_IRR': CH3COOOH ->[j] CH3O2 + OH                                
+    'PAN_HV_IRR'     : PAN ->[j] 0.6*CH3CO3 + 0.6*NO2 + 0.4*CH3O2 + 0.4*NO3                                       
+    'MPAN_HV_IRR': MPAN ->[j] MCO3 + NO2                                       
+    'MACR_HV_IRR': MACR ->[j] 0.67*HO2 + 0.33*MCO3 + 0.67*CH2O + 0.67*CH3CO3 + 0.33*OH + 0.67*CO                                
+    'MVK_HV_IRR'     : MVK ->[j] 0.7*C3H6 + 0.7*CO + 0.3*CH3O2 + 0.3*CH3CO3       
+    'C2H5OOH_HV_IRR' : C2H5OOH ->[j] CH3CHO + HO2 + OH                                
+    'C3H7OOH_HV_IRR' : C3H7OOH ->[j] 0.82*CH3COCH3 + HO2 + OH                         
+    'ROOH_HV_IRR'    : ROOH ->[j] CH3CO3 + CH2O + OH                               
+    'CH3COCH3_HV_IRR': CH3COCH3 ->[j] CH3CO3 + CH3O2                                   
+    'CH3COCHO_HV_IRR': CH3COCHO ->[j] CH3CO3 + CO + HO2                                
+    'XOOH_HV_IRR'    : XOOH ->[j] OH                                               
+    'ONITR_HV_IRR'   : ONITR ->[j] HO2 + CO + NO2 + CH2O                            
+    'ISOPOOH_HV_IRR' : ISOPOOH ->[j] .402*MVK + .288*MACR + .69*CH2O + HO2            
+    'HYAC_HV_IRR'    : HYAC ->[j] CH3CO3 + HO2 + CH2O                              
+    'GLYALD_HV_IRR'  : GLYALD ->[j] HO2 + HO2 + CO + CH2O                            
+    'MEK_HV_IRR'     : MEK ->[j] CH3CO3 + C2H5O2                                  
+    'BIGALD_HV_IRR'  : BIGALD ->[j] 0.45*CO + 0.13*GLYOXAL + 0.56*HO2 + 0.13*CH3CO3 + 0.18*CH3COCHO                                    
+    'GLYOXAL_HV_IRR': GLYOXAL ->[j] CO + CO + HO2 + HO2                              
+    'ALKOOH_HV_IRR' : ALKOOH ->[j] 0.4*CH3CHO + 0.1*CH2O + 0.2*CH3COCH3 + 0.9*HO2 + 0.3*MEK + OH                                     
+    'MEKOOH_HV_IRR' : MEKOOH ->[j] OH + CH3CO3 + CH3CHO                             
+    'TOLOOH_HV_IRR' : TOLOOH ->[j] OH + 0.45*GLYOXAL + 0.45*CH3COCHO + 0.9*BIGALD   
+    'BIGALD1_HV_IRR': BIGALD1 ->[j] 0.6*MALO2 + HO2                                  
+    'BEPOMUC_HV_IRR': BEPOMUC ->[j] BIGALD1 + 1.5*HO2 + 1.5*CO                       
+    'TEPOMUC_HV_IRR': TEPOMUC ->[j] .5*CH3CO3 + HO2 + 1.5*CO                         
+    'BIGALD2_HV_IRR': BIGALD2 ->[j] 0.6*HO2 + 0.6*DICARBO2                           
+    'BIGALD3_HV_IRR': BIGALD3 ->[j] 0.6*HO2 + 0.6*CO + 0.6*MDIALO2                   
+    'BIGALD4_HV_IRR': BIGALD4 ->[j] HO2 + CO + CH3COCHO + CH3CO3                     
+    'MBOOOH_HV_IRR' : MBOOOH ->[j] OH + HO2 + 0.67*GLYALD + 0.67*CH3COCH3 + 0.33*HMPROP + 0.33*CH2O                      
+    'HMPROP_HV_IRR'  : HMPROP ->[j] 2*HO2 + CO + CH3COCH3                          
+    'TERPROD1_HV_IRR': TERPROD1 ->[j] HO2 + CO + TERPROD2                              
+    'TERPROD2_HV_IRR': TERPROD2 ->[j] 0.15*RO2 + 0.68*CH2O + 0.5*CH3COCH3 + 0.65*CH3CO3 + 1.2*HO2 + 1.7*CO       
+    'TERPOOH_HV_IRR' : TERPOOH ->[j] 0.4*CH2O + 0.05*CH3COCH3 + TERPROD1 + HO2 + OH   
+    'TERP2OOH_HV_IRR': TERP2OOH ->[j] OH + 0.375*CH2O + 0.3*CH3COCH3 + 0.25*CO + TERPROD2 + HO2 + 0.25*GLYALD             
+    'HONO_HV_IRR': HONO ->[j] OH + NO 
+    'O_M_IRR': O + M         ->[k] O3                                                
+    'O_O3_IRR': O + O3              ->[k] M                                 
+    'O1D_CB4_M_IRR': O1D_CB4 + M ->[k] O
+    'O1D_CB4_H2O_IRR': O1D_CB4 + H2O       ->[k] OH + OH                                          
+    'O1D_CB4_H2_IRR': O1D_CB4 + H2        ->[k] HO2 + OH                                         
+    'OH_H2_IRR': OH + H2             ->[k] HO2 + H2O                                        
+    'O_OH_IRR': O + OH              ->[k] HO2
+    'O_HO2_IRR': O + HO2             ->[k] OH                                        
+    'OH_O3_IRR': OH + O3             ->[k] HO2
+    'HO2_O3_IRR': HO2 + O3            ->[k] OH
+    'HO2_HO2_H2O_IRR': HO2 + HO2 + H2O     ->[k] H2O2                                             
+    'H2O2_OH_IRR': H2O2 + OH           ->[k] HO2 + H2O                                        
+    'OH_HO2_IRR': OH + HO2            ->[k] H2O
+    'OH_OH_IRR': OH + OH             ->[k] H2O + O                                          
+    'OH_OH_a_IRR': OH + OH       ->[k] H2O2                                       
+    'N2O_O1D_CB4_IRR': N2O + O1D_CB4       ->[k] NO + NO                                          
+    'N2O_O1D_CB4_a_IRR': N2O + O1D_CB4       ->[k] M                                   
+    'NO_HO2_IRR': NO + HO2            ->[k] NO2 + OH                                         
+    'O3_NO_IRR': O3 + NO             ->[k] NO2                                       
+    'O_NO2_IRR': O + NO2             ->[k] NO
+    'O3_NO2_IRR': O3 + NO2            ->[k] NO3
+    'NO3_HO2_IRR'    : NO3 + HO2           ->[k] OH + NO2                                         
+    'NO3_NO2_IRR'    : NO3 + NO2     ->[k] N2O5
+    'N2O5_IRR'       : N2O5          ->[k] NO2 + NO3
+    'OH_NO2_IRR'     : OH + NO2      ->[k] HNO3
+    'OH_HNO3_IRR'    : OH + HNO3           ->[k] NO3 + H2O                                        
+    'NO3_NO_IRR'     : NO3 + NO            ->[k] NO2 + NO2                                        
+    'HO2_NO2_IRR'    : HO2 + NO2     ->[k] HO2NO2
+    'OH_HO2NO2_IRR'  : OH + HO2NO2         ->[k] NO2 + H2O
+    'HO2NO2_IRR'     : HO2NO2        ->[k] HO2 + NO2
+    'N2O5_M_IRR'     : N2O5 + M            ->[k] 2.00*HNO3                                  
+    'NO3_IRR'        : NO3                 ->[k] HNO3                                             
+    'NO2_IRR'        : NO2                 ->[k] 0.5*OH + 0.5*NO + 0.5*HNO3                       
+    'CH4_OH_IRR'     : CH4 + OH            ->[k] CH3O2 + H2O                                      
+    'CH4_O1D_CB4_IRR' : CH4 + O1D_CB4       ->[k] 0.75*CH3O2 + 0.75*OH + 0.25*CH2O + 0.4*HO2 + 0.05*H2                                          
+    'CH3O2_NO_IRR'    : CH3O2 + NO          ->[k] CH2O + NO2 + HO2                          
+    'CH3O2_CH3O2_IRR': CH3O2 + CH3O2       ->[k] CH2O + CH2O + HO2 + HO2                    
+    'CH3O2_CH3O2_a_IRR': CH3O2 + CH3O2       ->[k] CH2O + CH3OH                               
+    'CH3O2_HO2_IRR': CH3O2 + HO2         ->[k] CH3OOH                              
+    'CH3OOH_OH_IRR': CH3OOH + OH         ->[k] 0.7*CH3O2 + 0.3*OH + 0.3*CH2O + H2O              
+    'CH2O_NO3_IRR': CH2O + NO3          ->[k] CO + HO2 + HNO3                                  
+    'CH2O_OH_IRR': CH2O + OH           ->[k] CO + HO2 + H2O                                   
+    'CO_OH_IRR': CO + OH             ->[k] HO2                                      
+    'C2H4_OH_IRR': C2H4 + OH    ->[k] 0.75*EO2 + 0.5*CH2O + 0.25*HO2             
+    'C2H4_O3_IRR': C2H4 + O3           ->[k] CH2O + 0.12*HO2 + 0.5*CO + 0.12*OH + 0.5*HCOOH   
+    'SO2_OH_IRR': SO2 + OH            ->[k] SO4                                              
+    'GLYOXAL_OH_IRR': GLYOXAL + OH        ->[k] HO2 + CO                             
+    'EO2_NO_IRR': EO2 + NO            ->[k] EO + NO2                                  
+    'EO_M_IRR': EO + M       ->[k] GLYALD + HO2                                     
+    'EO_IRR'          : EO                  ->[k] 2*CH2O + HO2                                     
+    'C2H6_OH_IRR'     : C2H6 + OH           ->[k] C2H5O2
+    'C2H5O2_NO_IRR'   : C2H5O2 + NO         ->[k] CH3CHO + HO2 + NO2                        
+    'C2H5O2_HO2_IRR'  : C2H5O2 + HO2        ->[k] C2H5OOH
+    'C2H5O2_CH3O2_IRR': C2H5O2 + CH3O2      ->[k] .7*CH2O + .8*CH3CHO + .3*CH3OH + .2*C2H5OH + HO2                                        
+    'C2H5OOH_OH_IRR': C2H5OOH + OH        ->[k] .5*C2H5O2 + .5*CH3CHO + .5*OH                    
+    'C3H6_OH_IRR'  : C3H6 + OH     ->[k] PO2                            
+    'C3H6_O3_IRR'   : C3H6 + O3           ->[k] .54*CH2O + .19*HO2 + .33*OH + .08*CH4 + .56*CO + .5*CH3CHO + .31*CH3O2 + .25*CH3COOH              
+    'C3H6_NO3_IRR'    : C3H6 + NO3          ->[k] ONIT                                             
+    'PO2_NO_IRR'      : PO2 + NO            ->[k] CH3CHO + CH2O + HO2 + NO2                 
+    'PO2_HO2_IRR'     : PO2 + HO2           ->[k] POOH                               
+    'POOH_OH_IRR'     : POOH + OH           ->[k] .5*PO2 + .5*OH + .5*HYAC                         
+    'CH3CHO_OH_IRR'   : CH3CHO + OH         ->[k] CH3CO3
+    'CH3CHO_NO3_IRR'  : CH3CHO + NO3        ->[k] CH3CO3 + HNO3                                    
+    'CH3CO3_NO_IRR'   : CH3CO3 + NO         ->[k] CH3O2 + NO2
+    'CH3CO3_NO2_IRR'  : CH3CO3 + NO2  ->[k] PAN                               
+    'CH3CO3_HO2_IRR'  : CH3CO3 + HO2        ->[k] .75*CH3COOOH + .25*CH3COOH + .25*O3        
+    'CH3CO3_CH3O2_IRR': CH3CO3 + CH3O2      ->[k] .9*CH3O2 + .9*HO2 + .1*CH3COOH + CH2O                                  
+    'CH3COOOH_OH_IRR'  : CH3COOOH + OH       ->[k] .5*CH3CO3 + .5*CH2O
+    'PAN_IRR'   : PAN           ->[k] CH3CO3 + NO2                               
+    'CH3CO3_CH3CO3_IRR': CH3CO3 + CH3CO3     ->[k] 2*CH3O2                          
+    'C3H8_OH_IRR'      : C3H8 + OH           ->[k] C3H7O2                                   
+    'C3H7O2_NO_IRR'    : C3H7O2 + NO         ->[k] .82*CH3COCH3 + .27*CH3CHO + NO2 + HO2     
+    'C3H7O2_HO2_IRR'   : C3H7O2 + HO2        ->[k] C3H7OOH                             
+    'C3H7O2_CH3O2_IRR' : C3H7O2 + CH3O2      ->[k] CH2O + HO2 + .82*CH3COCH3                  
+    'C3H7OOH_OH_IRR'   : C3H7OOH + OH        ->[k] C3H7O2                                   
+    'CH3COCH3_OH_IRR'  : CH3COCH3 + OH       ->[k] RO2                                      
+    'RO2_NO_IRR'       : RO2 + NO            ->[k] CH3CO3 + CH2O + NO2                       
+    'RO2_HO2_IRR'      : RO2 + HO2           ->[k] ROOH                                
+    'RO2_CH3O2_IRR'    : RO2 + CH3O2         ->[k] .3*CH3CO3 + .8*CH2O + .3*HO2 + .2*HYAC + .5*CH3COCHO + .5*CH3OH                     
+    'ROOH_OH_IRR'  : ROOH + OH           ->[k] RO2                                        
+    'BIGENE_OH_IRR': BIGENE + OH         ->[k] ENEO2                                              
+    'ENEO2_NO_IRR' : ENEO2 + NO          ->[k] CH3CHO + .5*CH2O + .5*CH3COCH3 + HO2 + NO2  
+    'BIGALK_OH_IRR': BIGALK + OH         ->[k] ALKO2                                              
+    'ALKO2_NO_IRR' : ALKO2 + NO          ->[k] .4*CH3CHO + .1*CH2O + .4*CH3COCH3 + .9*HO2 + .1*MEK + .9*NO2 + .1*ONIT                 
+    'ALKO2_HO2_IRR': ALKO2 + HO2         ->[k] ALKOOH                                     
+    'ALKOOH_OH_IRR': ALKOOH + OH         ->[k] ALKO2                                            
+    'ONIT_OH_IRR'  : ONIT + OH           ->[k] NO2 + CH3COCHO                                   
+    'MEK_OH_IRR'   : MEK + OH            ->[k] MEKO2                                            
+    'MEKO2_NO_IRR' : MEKO2 + NO          ->[k] CH3CO3 + CH3CHO + NO2                     
+    'MEKO2_HO2_IRR': MEKO2 + HO2         ->[k] MEKOOH                                     
+    'MEKOOH_OH_IRR': MEKOOH + OH         ->[k] MEKO2                                            
+    'TOLO2_HO2_IRR': TOLO2 + HO2         ->[k] TOLOOH                                     
+    'TOLOOH_OH_IRR': TOLOOH + OH         ->[k] TOLO2                                            
+    'ISOP_OH_IRR'  : ISOP + OH           ->[k] ISOPO2                                           
+    'ISOP_O3_IRR'  : ISOP + O3           ->[k] .4*MACR + .2*MVK + .07*C3H6 + .27*OH + .06*HO2 + .6*CH2O + .3*CO + .1*O3 + .2*MCO3 + .2*CH3COOH   
+    'ISOPO2_NO_IRR': ISOPO2 + NO         ->[k] .08*ONITR + .92*NO2 + .23*MACR + .32*MVK + .33*HYDRALD + .02*GLYOXAL + .02*GLYALD + .02*CH3COCHO + .02*HYAC + .55*CH2O + .92*HO2                                             
+    'ISOPO2_NO3_IRR': ISOPO2 + NO3        ->[k] HO2 + NO2 + .6*CH2O + .25*MACR + .35*MVK + .36*HYDRALD + 0.02*HYAC + .02*CH3COCHO + .02*GLYOXAL + .02*GLYALD                         
+    'ISOPO2_HO2_IRR'  : ISOPO2 + HO2        ->[k] ISOPOOH                                    
+    'ISOPOOH_OH_IRR'  : ISOPOOH + OH        ->[k] .5*XO2 + .5*ISOPO2                               
+    'ISOPO2_CH3O2_IRR': ISOPO2 + CH3O2      ->[k] .25*CH3OH + HO2 + 1.2*CH2O + .19*MACR + .26*MVK + .3*HYDRALD                                 
+    'ISOPO2_CH3CO3_IRR': ISOPO2 + CH3CO3     ->[k] CH3O2 + HO2 + 0.6*CH2O + .25*MACR + .35*MVK + .4*HYDRALD                         
+    'MVK_OH_IRR': MVK + OH            ->[k] MACRO2                                           
+    'MVK_O3_IRR': MVK + O3            ->[k] .8*CH2O + .95*CH3COCHO + .08*OH + .2*O3 + .06*HO2 + .05*CO + .04*CH3CHO                    
+    'MACR_OH_IRR': MACR + OH           ->[k] .5*MACRO2 + .5*MCO3                  
+    'MACR_O3_IRR': MACR + O3           ->[k] .8*CH3COCHO + .275*HO2 + .2*CO + .7*CH2O + .215*OH + .2*O3                                  
+    'MACRO2_NO_IRR': MACRO2 + NO         ->[k] NO2 + .47*HO2 + .25*CH2O + .25*CH3COCHO + .53*CH3CO3 + .53*GLYALD + .22*HYAC + .22*CO                                             
+    'MACRO2_NO_IRR' : MACRO2 + NO         ->[k] .8*ONITR                                  
+    'MACRO2_NO3_IRR': MACRO2 + NO3        ->[k] NO2 + .47*HO2 + .25*CH2O + .25*CH3COCHO + .22*CO + .53*GLYALD + .22*HYAC + .53*CH3CO3      
+    'MACRO2_HO2_IRR'  : MACRO2 + HO2        ->[k] MACROOH                                    
+    'MACRO2_CH3O2_IRR': MACRO2 + CH3O2      ->[k] .73*HO2 + .88*CH2O + .11*CO + .24*CH3COCHO + .26*GLYALD + .26*CH3CO3 + .25*CH3OH + .23*HYAC                                   
+    'MACRO2_CH3CO3_IRR': MACRO2 + CH3CO3     ->[k] .25*CH3COCHO + CH3O2 + .22*CO + .47*HO2 + .53*GLYALD + .22*HYAC + .25*CH2O + .53*CH3CO3                                     
+    'MACROOH_OH_IRR': MACROOH + OH        ->[k] .5*MCO3 + .2*MACRO2 + .1*OH + .2*HO2             
+    'MCO3_NO_IRR'   : MCO3 + NO           ->[k] NO2 + CH2O + CH3CO3               
+    'MCO3_NO3_IRR'  : MCO3 + NO3          ->[k] NO2 + CH2O + CH3CO3                      
+    'MCO3_HO2_IRR'  : MCO3 + HO2          ->[k] .25*O3 + .25*CH3COOH + .75*CH3COOOH                                       
+    'MCO3_CH3O2_IRR' : MCO3 + CH3O2        ->[k] 2*CH2O + HO2 + CH3CO3              
+    'MCO3_CH3CO3_IRR': MCO3 + CH3CO3       ->[k] CH3O2 + CH2O + CH3CO3            
+    'MCO3_MCO3_IRR'  : MCO3 + MCO3         ->[k] 2*CH2O + 2*CH3CO3                
+    'MCO3_NO2_M_IRR' : MCO3 + NO2 + M      ->[k] MPAN                                        
+    'MPAN_M_IRR'     : MPAN + M            ->[k] MCO3 + NO2                                  
+    'OH_BENZENE_IRR' : OH + BENZENE        ->[k] .53*PHENOL + .12*BEPOMUC + .65*HO2 + .35*BENZO2   
+    'OH_PHENOL_IRR'  : OH + PHENOL         ->[k] 0.14*PHENO2 + 0.80*HO2 + 0.06*PHENO               
+    'PHENO2_NO_IRR'  : PHENO2 + NO         ->[k] HO2 + .70*GLYOXAL + NO2                    
+    'PHENO2_HO2_IRR' : PHENO2 + HO2        ->[k] PHENOOH                                     
+    'OH_PHENOOH_IRR' : OH + PHENOOH        ->[k] PHENO2                                            
+    'PHENO_NO2_IRR'  : PHENO + NO2         ->[k] M                                                 
+    'PHENO_O3_IRR'   : PHENO + O3          ->[k] C6H5O2                                            
+    'C6H5O2_NO_IRR'  : C6H5O2 + NO         ->[k] PHENO + NO2                                
+    'C6H5O2_HO2_IRR' : C6H5O2 + HO2        ->[k] C6H5OOH                                     
+    'OH_C6H5OOH_IRR' : OH + C6H5OOH        ->[k] C6H5O2                                            
+    'BENZO2_NO_IRR'  : BENZO2 + NO         ->[k] NO2 + GLYOXAL + 0.5*BIGALD1 + HO2          
+    'BENZO2_HO2_IRR' : BENZO2 + HO2        ->[k] BENZOOH                                     
+    'OH_BENZOOH_IRR' : OH + BENZOOH        ->[k] BENZO2                                            
+    'MALO2_NO2_IRR'  : MALO2 + NO2         ->[k] M                                                 
+    'MALO2_NO_IRR'   : MALO2 + NO          ->[k] 0.4*GLYOXAL + 0.4*HO2 + 0.4*CO              
+    'MALO2_HO2_IRR'  : MALO2 + HO2         ->[k] 0.16*GLYOXAL + 0.16*HO2 + 0.16*CO            
+    'OH_TOLUENE_IRR' : OH + TOLUENE        ->[k] 0.18*CRESOL + 0.10*TEPOMUC + 0.07*BZOO + 0.65*TOLO2 + 0.28*HO2                            
+    'OH_CRESOL_IRR' : OH + CRESOL         ->[k] 0.20*PHENO2 + 0.73*HO2 + 0.07*PHENO              
+    'BZOO_HO2_IRR'  : BZOO + HO2          ->[k] BZOOH                                      
+    'OH_BZOOH_IRR'  : OH + BZOOH          ->[k] BZOO                                             
+    'BZOO_NO_IRR'   : BZOO + NO           ->[k] BZALD + NO2 + HO2                         
+    'OH_BZALD_IRR'  : OH + BZALD          ->[k] ACBZO2                                           
+    'ACBZO2_NO2_IRR': ACBZO2 + NO2        ->[k] PBZNIT                                           
+    'PBZNIT_IRR'    : PBZNIT              ->[k] ACBZO2 + NO2                                     
+    'ACBZO2_NO_IRR' : ACBZO2 + NO         ->[k] C6H5O2 + NO2                              
+    'ACBZO2_HO2_IRR': ACBZO2 + HO2        ->[k] 0.4*C6H5O2 + 0.4*OH                        
+    'TOLO2_NO_IRR'  : TOLO2 + NO          ->[k] NO2 + 0.6*GLYOXAL + 0.4*CH3COCHO + HO2 + 0.2*BIGALD1 + 0.2*BIGALD2 + 0.2*BIGALD3   
+    'DICARBO2_HO2_IRR': DICARBO2 + HO2      ->[k] 0.4*OH + 0.07*HO2 + 0.07*CH3COCHO + 0.07*CO + 0.33*CH3O2                                 
+    'DICARBO2_NO_IRR': DICARBO2 + NO       ->[k] NO2 + 0.17*HO2 + 0.17*CH3COCHO + 0.17*CO + 0.83*CH3O2                                
+    'MDIALO2_HO2_IRR': MDIALO2 + HO2       ->[k] 0.4*OH + 0.33*HO2 + 0.07*CH3COCHO + 0.14*CO + 0.07*CH3O2 + 0.07*GLYOXAL                  
+    'MDIALO2_NO_IRR': MDIALO2 + NO        ->[k] NO2 + 0.83*HO2 + 0.17*CH3COCHO + 0.35*CO + 0.17*CH3O2 + 0.17*GLYOXAL                 
+    'DICARBO2_NO2_IRR': DICARBO2 + NO2      ->[k] M                                                
+    'MDIALO2_NO2_IRR' : MDIALO2 + NO2       ->[k] M                                                
+    'OH_XYLENES_IRR'  : OH + XYLENES        ->[k] 0.15*XYLOL + 0.23*TEPOMUC + 0.06*BZOO + 0.56*XYLENO2 + 0.38*HO2                          
+    'OH_XYLOL_IRR'   : OH + XYLOL          ->[k] 0.30*XYLOLO2 + 0.63*HO2 + 0.07*PHENO             
+    'XYLOLO2_NO_IRR' : XYLOLO2 + NO        ->[k] HO2 + NO2 + .17*GLYOXAL + .51*CH3COCHO    
+    'XYLOLO2_HO2_IRR': XYLOLO2 + HO2       ->[k] XYLOLOOH                                   
+    'OH_XYLOLOOH_IRR': OH + XYLOLOOH       ->[k] XYLOLO2                                          
+    'XYLENO2_HO2_IRR': XYLENO2 + HO2       ->[k] XYLENOOH                                   
+    'OH_XYLENOOH_IRR': OH + XYLENOOH       ->[k] XYLENO2                                          
+    'XYLENO2_NO_IRR' : XYLENO2 + NO        ->[k] NO2 + HO2 + 0.34*GLYOXAL + 0.54*CH3COCHO + 0.06*BIGALD1 + 0.2*BIGALD2 + 0.15*BIGALD3 + .21*BIGALD4                               
+    'APIN_OH_IRR' : APIN + OH           ->[k] TERPO2                                           
+    'BPIN_OH_IRR' : BPIN + OH           ->[k] TERPO2                                           
+    'LIMON_OH_IRR': LIMON + OH          ->[k] TERPO2                                           
+    'MYRC_OH_IRR' : MYRC + OH           ->[k] TERPO2                                           
+    'BCARY_OH_IRR': BCARY + OH          ->[k] TERPO2                                           
+    'APIN_O3_IRR' : APIN + O3           ->[k] .33*TERPROD1 + .3*TERPROD2 + .63*OH + .57*HO2 + .23*CO + .52*CH3COCH3 + .34*CH2O + .1*BIGALD + .05*HCOOH + .05*BIGALK + .06*CH3CO3 + .06*RO2                                       
+    'BPIN_O3_IRR': BPIN + O3           ->[k] .33*TERPROD1 + .3*TERPROD2 + .63*OH + .57*HO2 + .23*CO + .52*CH3COCH3 + .34*CH2O + .1*BIGALD + .05*HCOOH + .05*BIGALK + .06*CH3CO3 + .06*RO2                                                                     
+    'LIMON_O3_IRR': LIMON + O3          ->[k] .33*TERPROD1 + .3*TERPROD2 + .63*OH + .57*HO2 + .23*CO + .52*CH3COCH3 + .34*CH2O + .1*BIGALD + .05*HCOOH + .05*BIGALK + .06*CH3CO3 + .06*RO2                                                                                                  
+    'MYRC_O3_IRR': MYRC + O3           ->[k] .33*TERPROD1 + .3*TERPROD2 + .63*OH + .57*HO2 + .23*CO + .52*CH3COCH3 + .34*CH2O + .1*BIGALD + .05*HCOOH + .05*BIGALK + .06*CH3CO3 + .06*RO2                                                                                                  
+    'BCARY_O3_IRR': BCARY + O3          ->[k] .33*TERPROD1 + .3*TERPROD2 + .63*OH + .57*HO2 + .23*CO + .52*CH3COCH3 + .34*CH2O + .1*BIGALD + .05*HCOOH + .05*BIGALK + .06*CH3CO3 + .06*RO2                                                                                                  
+    'LIMON_NO3_IRR': LIMON + NO3         ->[k] NTERPO2                                          
+    'MYRC_NO3_IRR' : MYRC + NO3          ->[k] NTERPO2                                          
+    'BCARY_NO3_IRR': BCARY + NO3         ->[k] NTERPO2                                          
+    'TERPO2_NO_IRR': TERPO2 + NO         ->[k] .1*ONITR + .9*NO2 + .36*CH2O + .045*CH3COCH3 + .9*TERPROD1 + .9*HO2                      
+    'TERPO2_HO2_IRR'  : TERPO2 + HO2        ->[k] TERPOOH                                    
+    'TERPO2_CH3O2_IRR': TERPO2 + CH3O2      ->[k] TERPROD1 + .95*CH2O + .25*CH3OH + HO2 + .025*CH3COCH3                              
+    'TERPOOH_OH_IRR'  : TERPOOH + OH        ->[k] TERPO2                                           
+    'TERP2OOH_OH_IRR' : TERP2OOH + OH       ->[k] TERP2O2                                          
+    'TERPROD1_OH_IRR' : TERPROD1 + OH       ->[k] TERP2O2                                          
+    'TERPROD1_NO3_IRR': TERPROD1 + NO3      ->[k] .5*TERP2O2 + .5*NTERPO2                          
+    'TERP2O2_NO_IRR'  : TERP2O2 + NO        ->[k] .1*ONITR + .9*NO2 + .34*CH2O + .27*CH3COCH3 + .225*CO + .9*TERPROD2 + .9*HO2 + .225*GLYALD                                 
+    'TERP2O2_HO2_IRR'  : TERP2O2 + HO2       ->[k] TERP2OOH                                   
+    'TERP2O2_CH3O2_IRR': TERP2O2 + CH3O2     ->[k] TERPROD2 + .93*CH2O + .25*CH3OH + HO2 + .125*CO + .125*GLYALD + .15*CH3COCH3                               
+    'TERPROD2_OH_IRR': TERPROD2 + OH       ->[k] .15*RO2 + .68*CH2O + .5*CH3COCH3 + .65*CH3CO3 + .2*HO2 + .7*CO                      
+    'NTERPO2_NO_IRR'   : NTERPO2 + NO        ->[k] .1*ONITR + 1.9*NO2 + .9*TERPROD1          
+    'NTERPO2_HO2_IRR'  : NTERPO2 + HO2       ->[k] ONITR                                      
+    'NTERPO2_CH3O2_IRR': NTERPO2 + CH3O2     ->[k] .5*ONITR + .75*CH2O + .25*CH3OH + .5*HO2 + .5*TERPROD1 + .5*NO2                       
+    'NTERPO2_NO3_IRR': NTERPO2 + NO3       ->[k] 2 NO2 + TERPROD1                                 
+    'CH3COOH_OH_IRR' : CH3COOH + OH        ->[k] CH3O2
+    'ISOP_NO3_IRR'   : ISOP + NO3          ->[k] ISOPNO3                                          
+    'ISOPNO3_NO_IRR' : ISOPNO3 + NO        ->[k] 1.206*NO2 + .794*HO2 + .072*CH2O + .167*MACR + .039*MVK + .794*ONITR                     
+    'ISOPNO3_NO3_IRR': ISOPNO3 + NO3       ->[k] 1.206*NO2 + .072*CH2O + .167*MACR + .039*MVK + .794*ONITR + .794*HO2                            
+    'ISOPNO3_HO2_IRR': ISOPNO3 + HO2       ->[k] .206*NO2 + .206*OH + .206*CH2O + .167*MACR + .039*MVK + .794*ONITR                      
+    'CH3COCHO_OH_IRR' : CH3COCHO + OH       ->[k] CH3CO3 + CO                              
+    'CH3COCHO_NO3_IRR': CH3COCHO + NO3      ->[k] HNO3 + CO + CH3CO3                               
+    'ONITR_OH_IRR'    : ONITR + OH          ->[k] HYDRALD + HO2 + .4*NO2                           
+    'ONITR_NO3_IRR'   : ONITR + NO3         ->[k] HYDRALD + HO2 + NO2                              
+    'HYDRALD_OH_IRR'  : HYDRALD + OH        ->[k] XO2                                              
+    'XO2_NO_IRR'      : XO2 + NO            ->[k] NO2 + HO2 + .25*CO + .25*CH2O + .25*GLYOXAL + .25*CH3COCHO + .25*HYAC + .25*GLYALD      
+    'XO2_NO3_IRR': XO2 + NO3           ->[k] NO2 + HO2 + .25*CO + .25*CH2O + .25*GLYOXAL + .25*CH3COCHO + .25*HYAC + .25*GLYALD             
+    'XO2_HO2_IRR'  : XO2 + HO2           ->[k] XOOH                                       
+    'XO2_CH3O2_IRR': XO2 + CH3O2         ->[k] .3*CH3OH + .8*HO2 + .8*CH2O + .2*CO + .1*GLYOXAL + .1*CH3COCHO + .1*HYAC + .1*GLYALD                                  
+    'XO2_CH3CO3_IRR': XO2 + CH3CO3        ->[k] .25*CO + .25*CH2O + .25*GLYOXAL + CH3O2 + HO2 + .25*CH3COCHO + .25*HYAC + .25*GLYALD                                              
+    'XOOH_OH_IRR'      : XOOH + OH           ->[k] XO2                                      
+    'XOOH_OH_a_IRR'      : XOOH + OH           ->[k] OH                                       
+    'CH3OH_OH_IRR'     : CH3OH + OH          ->[k] HO2 + CH2O                                       
+    'C2H5OH_OH_IRR'    : C2H5OH + OH         ->[k] HO2 + CH3CHO                                     
+    'MPAN_OH_IRR'      : MPAN + OH           ->[k] .5*HYAC + .5*NO3 + .5*CH2O + .5*HO2 
+    'PAN_OH_IRR'       : PAN + OH            ->[k] CH2O + NO3                               
+    'HYAC_OH_IRR'      : HYAC + OH           ->[k] CH3COCHO + HO2                                   
+    'GLYALD_OH_IRR'    : GLYALD + OH         ->[k] HO2 + .2*GLYOXAL + .8*CH2O          
+    'DMS_OH_IRR'       : DMS + OH            ->[k] SO2                                              
+    'DMS_OH_a_IRR'       : DMS + OH            ->[k] .5*SO2 + .5*HO2                                  
+    'DMS_NO3_IRR'      : DMS + NO3           ->[k] SO2 + HNO3                                       
+    'NH3_OH_IRR'       : NH3 + OH            ->[k] M                                                
+    'HO2_IRR'          : HO2                 ->[k] .5*H2O2                                          
+    'C2H5O2_C2H5O2_IRR': C2H5O2 + C2H5O2     ->[k] 1.6*CH3CHO + 1.2*HO2 + .4*C2H5OH           
+    'MBO_OH_IRR'       : MBO + OH            ->[k] MBOO2                                            
+    'MBOO2_NO_IRR'     : MBOO2 + NO          ->[k] HO2 + .67*GLYALD + .67*CH3COCH3 + .33*HMPROP + .33*CH2O + NO2                            
+    'MBOO2_CH3O2_IRR': MBOO2 + CH3O2       ->[k] .917*CH2O + HO2 + .25*CH3OH + .333*GLYALD + .333*CH3COCH3 + .167*HMPROP                
+    'HMPROP_OH_IRR'   : HMPROP + OH         ->[k] HMPROPO2                                         
+    'HMPROPO2_NO_IRR' : HMPROPO2 + NO       ->[k] NO2 + HO2 + CH3COCH3              
+    'HMPROPO2_HO2_IRR': HMPROPO2 + HO2      ->[k] .4*OH + .4*HO2 + .4*CH3COCH3  
+    'MBOO2_HO2_IRR'   : MBOO2 + HO2         ->[k] MBOOOH                                     
+    'MBOOOH_OH_IRR'   : MBOOOH + OH         ->[k] .5*MBOO2 + .5*OH                                 
+    'MBO_O3_IRR'      : MBO + O3            ->[k] .1*CO + .5*CH2O + .1*CH3COCH3 + .9*HMPROP + .25*HCOOH + .25*CO + .06*HO2 + .06*OH            
+    'MBO_NO3_IRR'     : MBO + NO3           ->[k] MBONO3O2                                         
+    'MBONO3O2_HO2_IRR': MBONO3O2 + HO2      ->[k] 0.0*H2O                                   
+    'MBONO3O2_NO_IRR' : MBONO3O2 + NO       ->[k] .25*HMPROP + .25*CH2O + 1.25*NO2 + .75*ONIT + .75*CH3COCH3 + .75*HO2                    
+    'MBONO3O2_NO3_IRR': MBONO3O2 + NO3      ->[k] .25*HMPROP + .25*CH2O + 1.25*NO2 + .75*ONIT + .75*CH3COCH3 + .75*HO2                           
+    'C2H2_OH_IRR': C2H2 + OH     ->[k] 0.65*GLYOXAL + 0.65*OH + 0.35*HCOOH + 0.35*HO2 + 0.35*CO                                    
+    'HCOOH_OH_IRR'   : HCOOH + OH          ->[k] HO2 + H2O                                
+    'CH2O_HO2_IRR'   : CH2O + HO2          ->[k] HOCH2OO                                          
+    'HOCH2OO_IRR'    : HOCH2OO             ->[k] CH2O + HO2                                       
+    'HOCH2OO_NO_IRR' : HOCH2OO + NO        ->[k] HCOOH + NO2 + HO2                         
+    'HOCH2OO_HO2_IRR': HOCH2OO + HO2       ->[k] HCOOH  
+    'VOCA_OH_IRR' : VOCA + OH           ->[k] smpa + OH                                        
+    'VOCBB_OH_IRR': VOCBB + OH          ->[k] smpbb + OH                                       
+    'ISOP_OH_IRR' : ISOP + OH           ->[k] biog1_c + ISOP + OH                              
+    'APIN_OH_IRR' : APIN + OH           ->[k] biog1_o + APIN + OH                              
+    'BPIN_OH_IRR' : BPIN + OH           ->[k] biog1_o + BPIN + OH                              
+    'LIMON_OH_IRR': LIMON + OH          ->[k] biog1_o + LIMON + OH                             
+
+
+
+
+species_group_list:
+    - NOz = HNO3 + PAN + MPAN + ONITR
+    - NOx = NO + NO2
+    - NOX = NO + NO2 + NO3 + N2O5 + HO2NO2 + HONO
+    - NOy = NOX + NOz
+
+    - NOzN = NOz.atoms('N')
+    - NOxN = NOx.atoms('N')
+    - NOXN = NOX.atoms('N')
+    - NOyN = NOy.atoms('N')
+
+#    - VOC = C2H6 + CH3OH + C2H5OH + C2H4 + ISOP + APIN + BPIN + LIMON + MYRC + BCARY + CH2O + CH3CHO + TOLUENE + XYLENES + C3H8 + C2H2 + BENZENE + CH3COCH3 
+
+#    - ALD = CH3CHO + BIGALD + BIGALD1 + BIGALD2 + BIGALD3 + BIGALD4 + CH2O + ACBZO2 + BZALD
+
+    - VOC =  C2H6 + CH3OH + C2H5OH + C2H4 + ISOP + APIN + BPIN + LIMON + MYRC + BCARY + CH2O + CH3CHO + TOLUENE + XYLENES + C3H8 + C2H2 + BENZENE + CH3COCH3 + C3H6  + CH3COCHO  +  BIGENE + MEK  + MVK + MACR + MBO +  BIGALK +  HYAC + PHENOL + GLYALD + GLYOXAL + CRESOL + BIGALD + BIGALD1 + BIGALD2 + BIGALD3 + BIGALD4 + BZALD + XYLOL
+
+    - ALD = CH3CHO + BIGALD + BIGALD1 + BIGALD2 + BIGALD3 + BIGALD4 + CH2O + ACBZO2 + BZALD  + GLYALD + GLYOXAL + CH3COCHO + MACR 
+
+    - OOH = HCOOH + CH3OOH + CH3COOH + CH3COOOH + POOH + MACROOH + C2H5OOH + C3H7OOH + TERP2OOH + ROOH + MBOOOH + ISOPOOH + ALKOOH + MEKOOH + TOLOOH + TERPOOH + XOOH + PHENOOH + C6H5OOH + BENZOOH + BZOOH + XYLOLOOH + XYLENOOH + PHENO
+    - HOz = HNO3 + OOH + HO2NO2  + H2O + ONITR + H2O2 + PAN
+    - HOx = OH + HO2
+
+# Radical not yet complete
+
+    - Radical = O1D_CB4+ OH + HO2 + RO2 + O + NOx + XO2 + NO3 + ACBZO2 + ALKO2 + BENZO2 + BZOO + C2H5O2 + C3H7O2 + C6H5O2 + CH3CO3 + CH3O2 + DICARBO2 + ENEO2 + EO2 + EO + HMPROPO2 + MEKO2 + PHENO2 + PO2 + HOCH2OO + ISOPO2 + ISOPNO3 + MACRO2 + MALO2 + MBONO3O2 + MBOO2 + MCO3 + MDIALO2 + TERP2O2 + TERPO2 + TOLO2 + XYLENO2 + XYLOLO2
+  
+    - TRO2 = HO2 + RO2 + XO2 + ACBZO2 + ALKO2 + BENZO2 + BZOO + C2H5O2 + C3H7O2 + C6H5O2 + CH3CO3 + CH3O2 + DICARBO2 + ENEO2 + EO2 + HMPROPO2 + MEKO2 + PHENO2 + PO2 + HOCH2OO + ISOPO2  + MACRO2 + MALO2 + MBONO3O2 + MBOO2 + MCO3 + MDIALO2 + TERP2O2 + TERPO2 + TOLO2 + XYLENO2 + XYLOLO2 + MCO3 + CH3CO3 
+
+# ggp added isoprene and products etc. might not be complete yet
+    - ISOPall = ISOP + ISOPOOH + ISOPO2 + ISOPNO3
+    - TERPall = TERPROD1 + TERPROD2 + TERP2O2 + TERP2OOH + NTERPO2 + APIN + BPIN + LIMON + BCARY
+    
+#    - NOz =  HNO3 + ONITR  + PAN  + MPAN + PBZNIT
+# PAR + OLE + IOLE + ALDX + KET
+#    - PARC = PAR.atoms('C')
+#    - ETHAC = ETHA.atoms('C')
+#    - MEOHC = MEOH.atoms('C')
+#    - ETOHC = ETOH.atoms('C')
+#    - ETHC = ETH.atoms('C')
+#    - OLEC = OLE.atoms('C')
+#    - IOLEC = IOLE.atoms('C')
+#    - ISOPC = ISOP.atoms('C')
+#    - TERPC = TERP.atoms('C')
+#    - FORMC = FORM.atoms('C')
+#    - ALD2C = ALD2.atoms('C')
+#    - ALDXC = ALDX.atoms('C')
+#    - TOLC = TOL.atoms('C')
+#    - XYLC = XYL.atoms('C')
+#    - PRPAC = PRPA.atoms('C')
+#    - ETHYC = ETHY.atoms('C')
+#    - BENZC = BENZ.atoms('C')
+#    - ACETC = ACET.atoms('C')
+#    - KETC = KET.atoms('C')
+#    - VOCC = VOC.atoms('C')
+#    - VOC_CO = VOC + CO
+#    - NMHC = NTR + ROOH + MEPX + FACD + PAN + PACD + AACD + PANX + CRES + OPEN + MGLY + ISPD + VOC
+
+#    - HC = NMHC + CH4
+#    
+#    - NMHC_NO2 = NMHC + NO2
+
+#    - HC_NO2 = HC + NO2
+
+#    - NMHC_CO = NMHC + CO
+
+#    - HC_CO = HC + CO
+
+#    - NMHC_CO_NO2 = NMHC_NO2 + CO
+
+#    - HC_CO_NO2 = HC_NO2 + CO
+
+#    - Radical = O1D + OH + HO2 + XO2 + XO2N + MEO2 + HCO3 + C2O3 + CXO3 + ROR + TO2 + BZO2 + CAO2 + CRN2 + CRNO + CRO + EPX2 + ISO2 + OPO3 + RO2 + XLO2
+
+#    - TRO2 = HO2 + XO2 + MEO2 + HCO3 + C2O3 + CXO3 + ROR + TO2
+
+#    - XO2_N = XO2 + XO2N
+
+#    - XO2_TO2 = XO2 + TO2
+
+#    - XO2_NTO2 = XO2_N + TO2
+
+#    - RO2_NO2 = RO2 + NO2
+
+#    - Ox = O3 + O + O1D + NO2 + 2*NO3 + 3*N2O5 + HNO3 + 2*PNA + PAN
+
+#    - Oy = Ox + NTR + ROOH
+
+#    - ALD = ALD2 + ALDX + FORM + MGLY + OPEN + ISPD + PACD
+#    
+#    - ALD_ = ALD2 + ALDX
+#        
+#    - ALDO3 = C2O3 + CXO3
+#    
+#    - PANS = PAN + PANX
+#    
+#    - NO2_IMMEDIATES = NO2 + O3 + O + NO3 + N2O5 + NO + O1D
+#    
+#    - HOx = OH + HO2
+#    
+#    - ROx = HOx + MEO2 + HCO3 + C2O3 + CXO3 + ROR + TO2
+...
