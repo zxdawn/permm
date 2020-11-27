@@ -593,6 +593,9 @@ class Mechanism(object):
                     other = self('(%s)' % (rxn,))
         
             reactions = [self('(%s)' % (rxn, )) for rxn in reactions[:nlines-1]] + [other]
+        else:
+            reactions = [self('(%s)' % (rxn, )) for rxn in reactions[:nlines-1]]
+
         reactions = [(rxn.sum()[plot_spc], rxn) for rxn in reactions]
     
         reactions.sort(reverse = False)
