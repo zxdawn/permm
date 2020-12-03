@@ -51,8 +51,8 @@ class TkApp:
         self.execute_button = Button(frame, text = "go", command = self.execute)
         self.execute_button.grid(column = 6, row = 4)
 
-    def _get_species(self, list):
-        items = list.curselection()
+    def _get_species(self, species_list):
+        items = species_list.curselection()
         try: items = list(map(int, items))
         except: pass
         items = list(map(lambda i, d = self.species_objects: d[i], items))
